@@ -1,1 +1,3 @@
-<!-- beep boop -->
+<script lang="ts">
+	
+</script>
