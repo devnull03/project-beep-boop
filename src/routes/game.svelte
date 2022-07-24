@@ -1,13 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import Tile from "../components/tile.svelte";
-  import boop from "../assets/boop.mp3";
 
   let lastTile: HTMLDivElement;
   let firstTile: HTMLDivElement;
-  let audio: HTMLAudioElement;
+
+  let points = 0;
 
   let doit = false;
+  let speed = 2;
 
   // const tiles = [
   //   [0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1],
@@ -39,7 +40,7 @@
   const repeatOften = (): void => {
     if (doit) {
       window.scrollBy({
-        top: -3,
+        top: -speed,
         left: 0,
       });
       console.log("hm");
@@ -56,6 +57,10 @@
       doit = !doit;
     } else if (e.key === "j") {
       if (lastTile) lastTile.scrollIntoView();
+    } else if (e.key === "h") {
+      speed += 2;
+    } else if (e.key === "l") {
+      speed -= 2;
     }
   };
 </script>
@@ -71,15 +76,26 @@
     <div class="flex flex-col w-1/4">
       {#each row as tile, index}
         {#if index == row.length - 1}
-          <Tile tapable={Boolean(tile)} bind:_this={lastTile} />
+          <Tile
+            tapable={Boolean(tile)}
+            bind:_this={lastTile}
+            bind:pointsCounter={points}
+          />
         {:else if index == 0}
-          <Tile tapable={Boolean(tile)} bind:_this={firstTile} />
+          <Tile
+            tapable={Boolean(tile)}
+            bind:_this={firstTile}
+            bind:pointsCounter={points}
+          />
         {:else}
-          <Tile tapable={Boolean(tile)} />
+          <Tile tapable={Boolean(tile)} bind:pointsCounter={points} />
         {/if}
       {/each}
     </div>
   {/each}
 </div>
+<div class="py-14"></div>
 
-<!-- <audio src={boop} bind:this={audio} /> -->
+<div class="fixed w-screen py-8 bottom-0 flex flex-row justify-center items-center bg-[#00b0f0] text-white text-3xl z-10">
+  Your score: {points}
+</div>
