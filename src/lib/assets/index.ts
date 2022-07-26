@@ -6,5 +6,6 @@ import sus from "./sus.wav";
 import wow from "./wow.wav";
 import betterluck from "./betterluck.wav";
 import yousuck from "./yousuck.wav";
+import Star from "./star.svelte";
 
-export { boop, boop2, beep, scream, sus, wow, betterluck, yousuck };
+export { boop, boop2, beep, scream, sus, wow, betterluck, yousuck, Star };

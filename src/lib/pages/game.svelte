@@ -1,6 +1,10 @@
 <script lang="ts">
+  import type { Writable } from "svelte/store";
+  import Button from "$lib/components/button.svelte";
   import { onMount } from "svelte";
   import Tile from "../components/tile.svelte";
+
+  export let page: Writable<"start" | "game" | "end">;
 
   let lastTile: HTMLDivElement;
   let firstTile: HTMLDivElement;
@@ -94,8 +98,18 @@
     </div>
   {/each}
 </div>
-<div class="py-14"></div>
+<div class="py-14" />
 
-<div class="fixed w-screen py-8 bottom-0 flex flex-row justify-center items-center bg-[#00b0f0] text-white text-3xl z-10">
-  Your score: {points}
+<div
+  class="fixed w-screen py-8 bottom-0 flex flex-row justify-evenly items-center bg-[#00b0f0] text-white text-3xl z-10"
+>
+  <Button
+    on:click={() => {
+      $page = "start";
+    }}
+    text="back"
+  />
+  <div>
+    Your score: {points}
+  </div>
 </div>

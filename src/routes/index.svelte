@@ -6,11 +6,11 @@
 </script>
 
 {#if $page === "game"}
-  <Game />
+  <Game {page} />
 {/if}
 {#if $page === "start"}
-  <Start />
+  <Start {page} />
 {/if}
 {#if $page === "end"}
-  <End />
+  <End {page} />
 {/if}
