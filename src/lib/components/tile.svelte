@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { boop, beep, scream, boop2, sus } from "../assets/index";
+  import { beep, scream, boop, sus } from "../assets/index";
 
   export let tapable: boolean = false;
   export let _this: HTMLDivElement | null = null;
@@ -8,7 +8,7 @@
 
   let audio: HTMLAudioElement;
   $: tapped = false;
-  const sounds = [boop2, beep, boop2, beep, boop2, beep, boop2, beep, sus];
+  const sounds = [boop, beep, boop, beep, boop, beep, boop, beep, sus];
   const randomSound = () => sounds[Math.floor(Math.random() * sounds.length)];
 
   onMount(() => {

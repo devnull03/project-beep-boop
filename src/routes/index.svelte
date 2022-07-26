@@ -2,15 +2,15 @@
   import Game from "$lib/pages/game.svelte";
   import Start from "$lib/pages/start.svelte";
   import End from "$lib/pages/end.svelte";
-  import { page } from "../stores";
+  import { page, result } from "../stores";
 </script>
 
 {#if $page === "game"}
-  <Game {page} />
+  <Game {page} {result} />
 {/if}
 {#if $page === "start"}
   <Start {page} />
 {/if}
 {#if $page === "end"}
-  <End {page} />
+  <End {page} {result} />
 {/if}

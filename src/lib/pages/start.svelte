@@ -8,7 +8,7 @@
   const clickHandler = () => {
     setTimeout(() => {
       $page = "game";
-    }, 900);
+    }, 500);
   };
 </script>
 

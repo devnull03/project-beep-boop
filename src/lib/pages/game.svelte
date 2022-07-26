@@ -5,6 +5,7 @@
   import Tile from "../components/tile.svelte";
 
   export let page: Writable<"start" | "game" | "end">;
+  export let result: Writable<"win" | "lose">;
 
   let lastTile: HTMLDivElement;
   let firstTile: HTMLDivElement;
@@ -104,12 +105,21 @@
   class="fixed w-screen py-8 bottom-0 flex flex-row justify-evenly items-center bg-[#00b0f0] text-white text-3xl z-10"
 >
   <Button
-    on:click={() => {
-      $page = "start";
-    }}
-    text="back"
+    on:click={() =>
+      setTimeout(() => {
+        $page = "start";
+      }, 500)}
+    text="Back"
   />
   <div>
     Your score: {points}
   </div>
+  <Button
+    on:click={() =>
+      setTimeout(() => {
+        $page = "end";
+        $result = "lose";
+      }, 500)}
+    text="End"
+  />
 </div>
