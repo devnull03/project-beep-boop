@@ -1,0 +1,16 @@
+{
+	"short_name": "beep-boop",
+	"name": "Beeps and Boops",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "favicon.png",
+			"sizes": "128x128",
+			"type": "image/x-icon"
+		}
+	],
+	"background_color": "#4472c4",
+	"display": "standalone",
+	"theme_color": "#4472c4",
+	"description": "Piano Tiles like game for COMP 125 team project"
+}

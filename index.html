@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/project-beep-boop/favicon.ico" />
+		<link rel="manifest" href="/project-beep-boop/manifest.json">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#4472c4" />
+		<title>Beep or Boop</title>
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="modulepreload" href="/project-beep-boop/_app/immutable/start-2107e47e.js">
+	<link rel="modulepreload" href="/project-beep-boop/_app/immutable/chunks/index-fc32fee0.js">
+	<link rel="modulepreload" href="/project-beep-boop/_app/immutable/chunks/index-eb4eb028.js">
+			<script>
+		if ('serviceWorker' in navigator) {
+			addEventListener('load', function () {
+				navigator.serviceWorker.register('/project-beep-boop/service-worker.js');
+			});
+		}
+	</script>
+	</head>
+	<body>
+		<div>
+		<script type="module" data-sveltekit-hydrate="45h">
+		import { start } from "/project-beep-boop/_app/immutable/start-2107e47e.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
+			paths: {"base":"/project-beep-boop","assets":"/project-beep-boop"},
+			session: {},
+			route: true,
+			spa: true,
+			trailing_slash: "never",
+			hydrate: null
+		});
+	</script></div>
+	</body>
+</html>
