@@ -102,7 +102,7 @@
 <div class="py-14" />
 
 <div
-  class="fixed w-screen py-8 bottom-0 flex flex-row justify-evenly items-center bg-[#00b0f0] text-white text-3xl z-10"
+  class="fixed w-screen py-8 bottom-0 flex flex-row justify-evenly items-center bg-[#00b0f0] text-white text-2xl z-10"
 >
   <Button
     on:click={() =>
@@ -117,9 +117,10 @@
   <Button
     on:click={() =>
       setTimeout(() => {
-        $page = "end";
-        $result = "lose";
+        // $page = "end";
+        // $result = "lose";
+        doit = true;
       }, 500)}
-    text="End"
+    text="Start"
   />
 </div>
